@@ -1,0 +1,46 @@
+/* 전체 섹션 배경 */
+.projects {
+    background-color: #d8e9e5; /* 연한 민트 */
+    color: #2C3E50; /* 어두운 청록 텍스트 */
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+  
+  /* 카드 스타일 */
+  .project-card {
+    background-color: #ffffff; /* 순백 카드 */
+    color: #2C3E50;
+    border: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 0.75rem;
+  }
+  
+  /* 카드 호버 효과 */
+  .project-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+  }
+  
+  /* 카드 제목 */
+  .project-card .card-title {
+    font-weight: 600;
+    color: #1A3D4C;
+  }
+  
+  /* 카드 본문 텍스트 */
+  .project-card .card-text {
+    color: #3B4F5C;
+    font-size: 0.95rem;
+  }
+  
+  /* 버튼 색상 */
+  .project-card .btn-outline-primary {
+    border-color: #17A2B8; /* 밝은 민트 블루 */
+    color: #17A2B8;
+  }
+  
+  .project-card .btn-outline-primary:hover {
+    background-color: #17A2B8;
+    color: #fff;
+  }
+  

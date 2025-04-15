@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GIGA CAMP | 주식 뉴스 리포트</title>
+
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon.png') }}">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style_detail.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='project.css') }}">
+  <link href="https://cdn.jsdelivr.net/npm/pretendard@1.3.6/dist/web/variable/pretendardvariable-dynamic-subset.css" rel="stylesheet" />
+</head>
+
+<body>
+  <nav class="custom-navbar text-center">
+    <div class="container d-flex flex-column align-items-center">
+      <a class="navbar-brand mb-2" href="{{ url_for('home') }}">GIGA CAMP</a>
+      <ul class="nav justify-content-center gap-5">
+        <li class="nav-item"><a class="nav-link" href="{{ url_for('project_detail', project_id='entry_explane') }}">앤트리반</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ url_for('project_detail', project_id='cospro') }}">파이썬 자격증반</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ url_for('project_detail', project_id='aidl') }}">AI & 딥러닝반</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="py-5 bg-light">
+    <div class="container">
+        <br><br><br>
+      <!-- 프로젝트 타이틀 -->
+      <h1 class="text-center display-5 fw-bold text-primary mb-4">📈 주식 뉴스 리포트</h1>
+      <p class="text-center lead mb-5">KRX 데이터 + 자연어 처리 기반으로 <strong>관심 분야 기업 추천과 뉴스 반응 분석</strong>을 자동화한 프로젝트입니다.</p>
+
+      <!-- 시연 영상 -->
+      <div class="ratio ratio-16x9 mb-5">
+        <iframe src="https://www.youtube.com/embed/영상ID" title="주식 뉴스 리포트 시연 영상" allowfullscreen></iframe>
+      </div>
+
+      <!-- 프로젝트 설명 -->
+      <div class="row justify-content-center text-start mb-5">
+        <div class="col-lg-10">
+          <h4 class="fw-bold mb-3">📌 프로젝트 구조</h4>
+          <ol class="fs-5">
+            <li><strong>상장기업 데이터 확보:</strong> KRX로부터 약 2,700개의 상장기업 데이터를 수집합니다.</li><br>
+            <li><strong>업종 및 종목명 임베딩:</strong> 기업의 업종명과 종목명을 텍스트 임베딩 처리하여 벡터화합니다.</li><br>
+            <li><strong>임베딩 결과 저장:</strong> 유사도 계산 속도 향상을 위해 결과를 <code>.pkl</code> 형식으로 저장합니다.</li><br>
+            <li><strong>키워드 기반 유사 기업 추천:</strong> 사용자의 관심 키워드를 임베딩하여 유사한 기업을 추천합니다.</li><br>
+            <li><strong>네이버 뉴스 연동:</strong> 추천된 기업명을 바탕으로 네이버 뉴스 API를 통해 관련 기사를 수집합니다.</li><br>
+            <li><strong>뉴스 분석 및 여론 파악:</strong> 기사 내용을 유사도 기반으로 정렬하고, 감성 분석을 통해 투자 여론을 시각화합니다.</li><br>
+          </ol>
+        </div>
+      </div>
+      
+      <!-- 다른 프로젝트 보러가기 -->
+      <div class="text-center mt-5">
+        <h4 class="fw-bold mb-4">📂 다른 프로젝트도 구경해보세요!</h4>
+        <div class="d-flex justify-content-center flex-wrap gap-3">
+        <a href="{{ url_for('project_detail', project_id='stock') }}" class="btn btn-outline-dark">📈 주식 뉴스 리포트</a>
+        <a href="{{ url_for('project_detail', project_id='news_sentiment') }}" class="btn btn-outline-dark">📰 뉴스 반응 분석</a>
+        <a href="{{ url_for('project_detail', project_id='mealrecommend') }}" class="btn btn-outline-dark">🍜 맛집 리뷰 요약&분석</a>
+        </div>
+    </div>
+      <!-- 버튼 -->
+      <div class="d-flex justify-content-center gap-3 mt-5">
+        <a href="{{ url_for('home') }}" class="btn btn-outline-dark">🏠 메인으로 돌아가기</a>
+        <a href="{{ url_for('project_detail', project_id='comeon') }}" class="btn btn-primary">💬 상담받기</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="text-center py-4 bg-light">
+    <small>© GIGA CAMP - 주식 뉴스 리포트</small>
+  </footer>
+</body>
+</html>

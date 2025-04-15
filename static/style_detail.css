@@ -1,0 +1,90 @@
+/* 기본 설정 for 상세 페이지 */
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  font-family: 'Pretendard Variable', 'Noto Sans KR', sans-serif;
+  scroll-behavior: smooth;
+}
+
+/* 상단바 스타일 */
+.custom-navbar {
+    background: linear-gradient(135deg, #1f1c2c, #2d2a4a);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    padding: 0; /* 패딩 제거 */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+  }
+
+.custom-navbar .navbar-brand {
+    font-weight: 800;
+    font-size: 1.7rem;
+    color: #ffffff;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 8px rgba(255, 255, 255, 0.2);
+    margin-bottom: 0.3rem;
+  }
+  
+  /* 메뉴 */
+  .custom-navbar .nav-link {
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 0.2rem 0.6rem;
+    background: linear-gradient(270deg, #00ffd5, #74c0fc, #ff6ec4, #00ffd5);
+    background-size: 800% 800%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientShift 6s ease-in-out infinite, textWave 2s ease-in-out infinite;
+  }
+  
+  /* 반응형 - 모바일에서 텍스트 크게 */
+  @media (max-width: 576px) {
+    .custom-navbar .navbar-brand {
+      font-size: 1.8rem;
+    }
+  
+    .custom-navbar .nav-link {
+      font-size: 1.3rem;
+      padding: 0.2rem 0.4rem;
+    }
+  }
+
+/* 반응형 메뉴 줄이기 */
+@media (max-width: 576px) {
+  .custom-navbar .nav-link {
+    font-size: 0.9rem;
+    padding: 0.4rem;
+  }
+}
+
+/* 카드형 정보 영역 */
+.card-title {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.card-body ul {
+  padding-left: 1.2rem;
+  line-height: 1.7;
+}
+
+.lead {
+  font-size: 1.1rem;
+}
+
+/* 애니메이션 */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes textWave {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-2px); }
+}

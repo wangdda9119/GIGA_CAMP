@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head><title>접속 로그</title></head>
+<body>
+  <h2>📋 접속 로그</h2>
+  <pre>
+{% for line in logs %}
+{{ line.strip() }}
+{% endfor %}
+  </pre>
+  <a href="/logout">로그아웃</a>
+</body>
+</html>

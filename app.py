@@ -18,7 +18,7 @@ Session(app)
 def keep_alive():
     while True:
         try:
-            requests.get("https://your-app.onrender.com")
+            requests.get("https://giga-camp-app.onrender.com")
         except:
             pass
         time.sleep(14 * 60)
@@ -69,7 +69,7 @@ def logout():
 @app.route("/admin/logs")
 def view_logs():
     if not session.get("logged_in"):
-        return redirect("/login")
+        return redirect("/logen")
 
     try:
         with open("access.log", "r", encoding="utf-8") as f:

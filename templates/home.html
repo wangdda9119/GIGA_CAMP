@@ -116,6 +116,77 @@
         </div>
       </div>
     </div>
+
+
+        <!-- 4번째 섹션: 실제 수업 + 온라인 안내 + 위치 + 상담 버튼 -->
+<div class="section integrated-section">
+  <div class="container text-center py-5">
+    <br><br><br>
+
+    <h2 class="mb-4">📸 오프라인 수업 & 💻 온라인 안내</h2>
+    <p class="lead mb-5">현재 병점역 유엔아이센터 <strong>미디어회의실</strong>에서 진행중입니다!❤️<br>온라인 강의도 가능하니 많은 상담 부탁드립니다👍</p>
+
+    <!-- 개설 안내 카드 (2개만) -->
+    <div class="row g-4 justify-content-center">
+      <!-- 딥러닝반 -->
+      <div class="col-md-5">
+        <div class="card shadow-sm h-100">
+          <div class="card-body">
+            <h5 class="card-title">🧠 딥러닝반 추가모집</h5>
+            <p class="card-text">AI 모델 직접 만들며 실습!<br>기초부터 실전까지 풀케어!</p>
+            <a href="{{ url_for('project_detail', project_id='aidl') }}" class="btn btn-outline-success">더 알아보기</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 코스프로 -->
+      <div class="col-md-5">
+        <div class="card shadow-sm h-100">
+          <div class="card-body">
+            <h5 class="card-title">📘 코스프로 개강반</h5>
+            <p class="card-text">자격증 한 번에 합격하려면?<br>전문 강사진이 도와드려요!</p>
+            <a href="{{ url_for('project_detail', project_id='cospro') }}" class="btn btn-outline-primary">자세히 보기</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 👉 아주 큰 상담하러 가기 버튼 -->
+    <div class="mt-5">
+      <a href="{{ url_for('project_detail', project_id='comeon')}}" class="btn btn-lg btn-info px-5 py-3 fw-bold" style="font-size: 1.4rem; border-radius: 50px;">
+        💬 지금 상담하러 가기!
+      </a>
+    </div>
+
+    <br><br><br>
+
+    <!-- 실제 수업 사진 -->
+    <div class="row g-3 justify-content-center mb-5">
+      <div class="col-6 col-md-4">
+        <img src="{{ url_for('static', filename='realtime.jpg') }}" class="img-fluid rounded shadow-sm" alt="수업 사진 1">
+      </div>
+    </div>
+
+    <!-- 오프라인 위치 -->
+    <div class="container text-center py-5">
+      <h2 class="mb-4">📍 오프라인 강습 장소</h2>
+      <p class="lead">병점역 유엔아이센터 <strong>미디어회의실</strong>에서 진행돼요!</p>
+      <div class="mt-4">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3164.8411262346846!2d127.03377411530843!3d37.20650247986851!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357b439f4bc5a2f5%3A0xe19d360c6d77e2c!2z7Jqw64-E7Yq47J6sIOuMgOqzteyduOq1rCDsoJXroZwg7ZmU7KeA7Iqk7Yq47ZWZ66a8!5e0!3m2!1sko!2skr!4v1681399273259!5m2!1sko!2skr" 
+          width="100%" 
+          height="200" 
+          style="border:0; border-radius: 12px;" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
     
   </div>
   

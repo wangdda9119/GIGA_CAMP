@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GIGA CAMP | 상담 신청</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/pretendard@1.3.6/dist/web/variable/pretendardvariable-dynamic-subset.css" rel="stylesheet" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <style>
+    body {
+      font-family: 'Pretendard Variable', sans-serif;
+      background-color: #f8f9fa;
+    }
+    .comeon-section {
+      padding-top: 5rem;
+      padding-bottom: 3rem;
+    }
+    .kakao-top-box {
+      background-color: #fff;
+      border-radius: 1rem;
+      padding: 2rem;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+    }
+    .kakao-btn {
+      background-color: #fee500;
+      color: #3c1e1e;
+      font-weight: 600;
+      border: none;
+      font-size: 1.2rem;
+      padding: 1rem 2rem;
+      border-radius: 50px;
+      transition: background-color 0.3s ease;
+    }
+    .kakao-btn:hover {
+      background-color: #ffdd00;
+    }
+    .map-box iframe {
+      border-radius: 12px;
+    }
+
+    /* 모바일에서 텍스트 크기 조정 */
+    @media (max-width: 576px) {
+      .kakao-btn {
+        font-size: 1rem;
+        padding: 0.8rem 1.6rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ✅ 상단바 -->
+  <nav class="custom-navbar text-center">
+    <div class="container d-flex flex-column align-items-center py-2">
+      <a class="navbar-brand mb-1" href="{{ url_for('home') }}">GIGA CAMP</a>
+      <ul class="nav justify-content-center gap-4 flex-wrap">
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('project_detail', project_id='entry_explane') }}">앤트리반</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('project_detail', project_id='cospro') }}">파이썬 자격증반</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('project_detail', project_id='aidl') }}">AI & 딥러닝반</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ✅ 메인 섹션 -->
+  <div class="container comeon-section">
+    <br><br><br>
+    <!-- ✅ 카카오 상담 먼저! -->
+    <div class="kakao-top-box text-center mb-5">
+        <h3 class="mb-3">💬 빠른 상담은 카카오톡으로!</h3>
+        <p class="mb-4">궁금한 거 바로 물어보세요!<br>실시간으로 친절하게 답변드려요 😊</p>
+      
+        <!-- ✅ 카카오톡 버튼 -->
+        <a href="https://pf.kakao.com/_Txbpwn" target="_blank" class="kakao-btn mb-4">
+          💛 카카오톡 상담하러 가기
+        </a>
+      
+        <!-- ✅ 안내 메시지 (카드 안으로 이동됨) -->
+        <hr class="my-4">
+      
+        <h5>📌 유의사항 & 추천 대상</h5>
+        <ul class="text-start">
+          <li>수업은 일정 인원이 모집되면 개설됩니다. 선착순이니 빠른 상담 추천!</li>
+          <li>입문자부터 실무자까지, 개인 프로젝트 또는 입시/취업 준비용으로도 완벽해요.</li>
+          <li>온라인 & 오프라인 모두 가능하니 지역과 상황에 맞춰 선택하세요 🙌</li>
+        </ul>
+      </div>
+
+    <!-- ✅ 수업 사진 -->
+    <div class="text-center mb-4">
+      <h4 class="mb-3">📸 실제 수업 현장</h4>
+      <img src="{{ url_for('static', filename='realtime.jpg') }}" class="img-fluid rounded shadow-sm" alt="수업 사진">
+    </div>
+
+    <!-- ✅ 오프라인 장소 -->
+    <div class="text-center map-box">
+      <h4 class="mb-2">📍 오프라인 강습 장소</h4>
+      <p class="mb-3">병점역 유엔아이센터 <strong>미디어회의실</strong>에서 진행돼요!</p>
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3164.8411262346846!2d127.03377411530843!3d37.20650247986851!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357b439f4bc5a2f5%3A0xe19d360c6d77e2c!2z7Jqw64-E7Yq47J6sIOuMgOqzteyduOq1rCDsoJXroZwg7ZmU7KeA7Iqk7Yq47ZWZ66a8!5e0!3m2!1sko!2skr!4v1681399273259!5m2!1sko!2skr" 
+        width="100%" 
+        height="220" 
+        allowfullscreen 
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+
+  </div>
+
+</body>
+</html>

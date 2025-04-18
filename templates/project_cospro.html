@@ -29,6 +29,19 @@
     <div class="container text-center">
       <br><br><br>
       <h1 class="display-5 fw-bold text-primary mb-4">공식 인증된 실력!<br>cosPro 자격증으로 증명하세요</h1>
+      <div class="text-center mb-5">
+        <img
+          src="{{ url_for('static', filename='cospro.png') }}"
+          alt="cospro"
+          class="img-fluid rounded shadow-sm"
+          style="max-width: 800px; width: 100%; height: auto;"
+        >
+        <p class="mb-0">
+          <span style="color: gray; text-decoration: line-through;">
+            진짜 필수라니까??
+          </span>
+        </p>
+      </div>
       
       <!-- 버튼 묶음 -->
       <div class="d-flex justify-content-center gap-3 mt-4 mb-5">
@@ -163,6 +176,15 @@
       </div>
       
     </div>
+    <div class="text-center mt-5">
+      <h4 class="fw-bold mb-4">📂 프로젝트도 구경해보세요!</h4>
+      <div class="d-flex justify-content-center flex-wrap gap-3">
+      <a href="{{ url_for('project_detail', project_id='stock') }}" class="btn btn-outline-dark">📈 주식 뉴스 리포트</a>
+      <a href="{{ url_for('project_detail', project_id='news_sentiment') }}" class="btn btn-outline-dark">📰 뉴스 반응 분석</a>
+      <a href="{{ url_for('project_detail', project_id='mealrecommend') }}" class="btn btn-outline-dark">🍜 맛집 리뷰 요약&분석</a>
+      </div>
+  </div>
+  
   </main>
 
   <footer class="text-center py-4 bg-light">

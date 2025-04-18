@@ -77,3 +77,4 @@ def view_logs():
     except FileNotFoundError:
         logs = ["(아직 로그 없음)"]
     return render_template("logs.html", logs=logs)
+

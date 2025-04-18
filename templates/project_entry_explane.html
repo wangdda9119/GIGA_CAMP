@@ -26,6 +26,20 @@
   <main class="py-5 bg-light">
     <div class="container text-center">
       <h1 class="display-5 fw-bold text-primary mb-4">처음 시작하는 코딩<br> 앤트리로 쉽고 재밌게!</h1>
+    
+      <div class="text-center mb-5">
+        <img
+          src="{{ url_for('static', filename='cos.png') }}"
+          alt="엔트리"
+          class="img-fluid rounded shadow-sm"
+          style="max-width: 800px; width: 100%; height: auto;"
+        >
+        <p class="mb-0">
+          <span style="color: gray;">
+            입문하는 아이에게 최고!
+          </span>
+        </p>
+      </div>
 
       <!-- 버튼 묶음 -->
     <div class="d-flex justify-content-center gap-3 mt-4 mb-5">
@@ -149,6 +163,14 @@
       
 
   
+    </div>
+    <div class="text-center mt-5">
+      <h4 class="fw-bold mb-4">📂 프로젝트도 구경해보세요!</h4>
+      <div class="d-flex justify-content-center flex-wrap gap-3">
+      <a href="{{ url_for('project_detail', project_id='stock') }}" class="btn btn-outline-dark">📈 주식 뉴스 리포트</a>
+      <a href="{{ url_for('project_detail', project_id='news_sentiment') }}" class="btn btn-outline-dark">📰 뉴스 반응 분석</a>
+      <a href="{{ url_for('project_detail', project_id='mealrecommend') }}" class="btn btn-outline-dark">🍜 맛집 리뷰 요약&분석</a>
+      </div>
     </div>
   </main>
 

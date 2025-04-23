@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect, session, abort
 from flask_session import Session
+from werkzeug.middleware.proxy_fix import ProxyFix
 from dotenv import load_dotenv
 import os, threading, time, requests, datetime
 
@@ -10,6 +11,9 @@ ADMIN_PASSWORD = os.getenv("ADMIN_PASSWORD")
 SECRET_KEY = os.getenv("SECRET_KEY")
 
 app = Flask(__name__)
+app.wsgi_app = ProxyFix(app.wsgi_app, x_for=1, x_proto=1)
+
+
 app.secret_key = SECRET_KEY
 app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
@@ -27,6 +31,7 @@ threading.Thread(target=keep_alive, daemon=True).start()
 
 @app.before_request
 def log_request():
+    # 이제 request.remote_addr가 실제 클라이언트 IP를 반환합니다
     ip = request.remote_addr
     path = request.path
     ua = request.user_agent.string
@@ -78,3 +83,5 @@ def view_logs():
         logs = ["(아직 로그 없음)"]
     return render_template("logs.html", logs=logs)
 
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=5000, debug=True)

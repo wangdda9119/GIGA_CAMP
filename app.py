@@ -71,17 +71,33 @@ def logout():
     return redirect("/")
 
 # 관리자 로그 뷰
-@app.route("/admin/logs")
+@app.route("/admin/logs", methods=["GET", "POST"])
 def view_logs():
     if not session.get("logged_in"):
         return redirect("/logen")
 
+    # 오늘 날짜 기본값
+    selected_date = datetime.datetime.now().strftime("%Y-%m-%d")
+    if request.method == "POST":
+        selected_date = request.form.get("date", selected_date)
+
+    selected_prefix = f"[{selected_date}"
+
     try:
         with open("access.log", "r", encoding="utf-8") as f:
-            logs = f.readlines()
+            lines = f.readlines()
+            logs = [line for line in lines if line.startswith(selected_prefix)]
+
+        # 날짜 리스트 생성: 고유 날짜들만 추출
+        available_dates = sorted({line[1:11] for line in lines if line.startswith("[")}, reverse=True)
+
     except FileNotFoundError:
         logs = ["(아직 로그 없음)"]
-    return render_template("logs.html", logs=logs)
+        available_dates = []
+
+    return render_template("logs.html", logs=logs, available_dates=available_dates, selected_date=selected_date)
+
+
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000, debug=True)

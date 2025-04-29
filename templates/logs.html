@@ -45,6 +45,16 @@
   <div class="log-container">
     <a class="logout" href="/logout">🔒 로그아웃</a>
     <h2>📋 접속 로그</h2>
+    <form method="POST" action="/admin/logs" class="mb-4">
+      <label for="date">📅 날짜 선택: </label>
+      <select name="date" id="date">
+        {% for date in available_dates %}
+          <option value="{{ date }}" {% if date == selected_date %}selected{% endif %}>{{ date }}</option>
+        {% endfor %}
+      </select>
+      <button type="submit">조회</button>
+    </form>
+    
     <table>
       {% for line in logs %}
         <tr>
